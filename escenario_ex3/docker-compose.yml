@@ -1,0 +1,24 @@
+services:
+#Service odoo toma el Dockerfile de ./build/odoo
+ odoo1:
+  build: ./odoo
+  hostname: odoo1
+  ports:
+  - "8069:8069"
+  #Mapeo del directorio de la MV en el container
+  volumes:
+  - ~/odoo/src:/opt/odoo/src
+ odoo2:
+  build: ./odoo
+  hostname: odoo2
+  ports:
+  - "8070:8069"
+  #Mapeo del directorio de la MV en el container
+  volumes:
+  - ~/odoo/src:/opt/odoo/src
+ nginx:
+  build: ./nginx
+  hostname: nginx
+  ports:
+  - "80:80"
+   

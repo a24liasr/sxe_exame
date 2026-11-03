@@ -1,0 +1,10 @@
+services:
+#Service odoo toma el Dockerfile de ./odoo
+ odoo:
+  build: ./odoo
+  hostname: odoo
+  ports:
+  - "8069:8069"
+  #Mapeo del directorio del host en el container
+  volumes:
+  - ~/odoo/src:/opt/odoo/src
